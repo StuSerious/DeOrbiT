@@ -1,0 +1,7 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "'Binchotan_Sharp', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 16,
+    "editor.unicodeHighlight.nonBasicASCII": false
+}

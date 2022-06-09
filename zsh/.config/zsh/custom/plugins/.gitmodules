@@ -1,0 +1,4 @@
+[submodule "zsh-autosuggestions"]
+	branch = master
+[submodule "zsh-syntax-highlighting"]
+	branch = master

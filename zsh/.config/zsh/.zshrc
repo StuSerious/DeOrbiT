@@ -16,12 +16,15 @@ ZSH_THEME="stu"
 ZSH_THEME_RANDOM_CANDIDATES=(  )
 ZSH_THEME_RANDOM_QUIET="true"
 #> Plugins
-plugins=(aliases alias-finder alias-tips command-not-found debian git)
+plugins=(aliases alias-finder alias-tips command-not-found debian git zsh-autosuggestions zsh-syntax-highlighting)
 
 #>>> SECTION: Aliases
 #> OMZ
-alias zfg="code ~/.config/zsh/.zshrc"
 alias zrl="omz reload"
+alias zfg="code ~/.config/zsh/.zshrc"
+alias ztg="code ~/.config/zsh/custom/themes/stu.zsh-theme"
+alias zgtt="cd ~/.config/zsh/custom/themes/"
+alias zgtp="cd ~/.config/zsh/custom/plugins/"
 #> Alacritty
 alias afg="code ~/.config/alacritty/alacritty.yml"
 #> Shorts

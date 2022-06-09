@@ -1,34 +1,31 @@
-# Created by https://www.toptal.com/developers/gitignore/api/zsh
-# Edit at https://www.toptal.com/developers/gitignore?templates=zsh
+#>>>>> Stu's take on .gitignore, thanks toptal!
 
-### Zsh ###
-# Zsh compiled script + zrecompile backup
+#>>> SECTION: Zsh / OMZsh
+#> Zsh compiled script + zrecompile backup
 *.zwc
 *.zwc.old
 
-# Zsh completion-optimization dumpfile
+#> Zsh completion-optimization dumpfile
 *zcompdump*
 
-# Zsh zcalc history
+#> Zsh zcalc history
 .zcalc_history
 
-# A popular plugin manager's files
+#> A popular plugin manager's files
 ._zinit
 .zinit_lstupd
 
-# zdharma/zshelldoc tool's files
+#> zdharma/zshelldoc tool's files
 zsdoc/data
 
-# robbyrussell/oh-my-zsh/plugins/per-directory-history plugin's files
-# (when set-up to store the history in the local directory)
+#> robbyrussell/oh-my-zsh/plugins/per-directory-history plugin's files
+#> (when set-up to store the history in the local directory)
 .directory_history
 
-# MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
-# (for Zsh plugins using Python)
+#> MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
+#> (for Zsh plugins using Python)
 .venv
 
-# Zunit tests' output
+#> Zunit tests' output
 /tests/_output/*
 !/tests/_output/.gitkeep
-
-# End of https://www.toptal.com/developers/gitignore/api/zsh

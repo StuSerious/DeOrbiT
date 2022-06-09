@@ -1,3 +1,5 @@
 [submodule "zsh/.config/zsh/custom/plugins/alias-tips"]
 	path = zsh/.config/zsh/custom/plugins/alias-tips
 	url = https://github.com/djui/alias-tips
+[submodule "alias-tips"]
+	branch = master

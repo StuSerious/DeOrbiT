@@ -6,8 +6,8 @@ live_config_reload: true
 #>>> SECTION: Window Configuration
 window:
   dimensions:
-    columns: 0
-    lines: 0
+    columns: 120
+    lines: 80
   position:
     x: 0
     y: 0
@@ -15,9 +15,9 @@ window:
     x: 7
     y: 7
   dynamic_padding: false
-  decorations: none
+  decorations: full
   opacity: 0.9
-  startup_mode: maximized
+  startup_mode: windowed
   #title: Alacritty
   #class:
   #instance: Alacritty

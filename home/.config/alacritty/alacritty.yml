@@ -1,0 +1,92 @@
+#> Stu's take on Alacritty
+
+#>> ENV vars
+env:
+  TERM: alacritty
+
+
+#> SECTION: Config Config
+live_config_reload: true
+
+#> SECTION: Window Configuration
+window:
+  dimensions:
+    columns: 120
+    lines: 80
+  padding:
+    x: 6
+    y: 6
+  decorations: None
+  opacity: 0.9
+  startup_mode: maximized
+  dynamic_title: true
+scrolling:
+  history: 10000
+  multiplier: 3
+
+#>>> SECTION: Fonts and Letter Spacing
+font:
+  normal:
+    family: MesloLGS NF
+    style: Regular
+  size: 13
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  builtin_box_drawing: true
+draw_bold_text_with_bright_colors: false
+
+#>>> SECTION: Cursor and Selection
+cursor:
+  style:
+    shape: Beam
+    blinking: Off
+  vi_mode_style: None
+  blink_interval: 750
+  unfocused_hollow: true
+  thickness: 0.15
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+#>>> SECTION: Shell
+shell:
+  program: /bin/zsh
+#  args:
+#    - --login
+working_directory: ~
+alt_send_esc: true
+ipc_socket: true
+
+#>>> SECTION: Alerts
+#bell:
+#animation: EaseOutExpo
+#duration: 0
+#color: '#ffffff'
+#command: None
+
+#>>> SECTION: Mouse
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+  hide_when_typing: true
+#>>> SECTION: Mouse Binds
+#mouse_bindings:
+#  - { mouse: Right,                 action: ExpandSelection }
+#  - { mouse: Right,  mods: Control, action: ExpandSelection }
+#  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
+
+#>>> SECTION: Key Binds
+#key_bindings:
+#- { key: Paste,                                       action: Paste          }
+#- { key: Copy,                                        action: Copy           }
+#- { key: L,         mods: Control,                    action: ClearLogNotice }
+#- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
+#- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
+#- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
+#- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop    }
+#- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }

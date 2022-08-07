@@ -1,0 +1,196 @@
+ #> SECTION: Formatting
+format = """
+[](fg:#ff9600)\
+
+$username\
+$shell\
+$hostname\
+
+[](fg:#ff9600 bg:#85827b)\
+
+$directory\
+
+[](fg:#85827b bg:#ffffff)\
+
+$status\
+
+[](fg:#ffffff bg:#85827b)\
+
+$cmd_duration\
+
+[](fg:#85827b)\
+
+$fill\
+
+[](fg:#ff9600)\
+
+$time\
+
+[](fg:#85827b bg:#ff9600)\
+
+$memory_usage\
+
+[](fg:#ffffff bg:#85827b)\
+
+$battery\
+
+[](fg:#ffffff)\
+
+$line_break\
+$character\
+"""
+
+add_newline = true
+
+[line_break] #> breaks line where stated.
+              disabled = false
+  
+  
+[fill] #> rectifies and fills with chars, can specify multiple times in format to get equal segments.
+              disabled = false
+                 style = 'fg:#69645f'
+                symbol = '–'
+  
+  
+[character] #> still need to add proper support for vi mode
+              disabled = false
+        success_symbol = '[ ](fg:#ffffff)[ ](fg:#ef8c10)'
+          error_symbol = '[ ](fg:#ffffff)[ ](fg:#ff0000)'
+          vicmd_symbol = '[ ](fg:#ffffff)[ ](fg:#098019)'
+  
+  
+[username]
+              disabled = false
+            style_user = 'fg:#000000 bg:#ff9600'
+            style_root = 'fg:#e32424 bg:#ff9600'
+                format = '[$user]($style)'
+           show_always = true
+
+
+[shell]
+              disabled = false
+                 style = 'fg:#000000 bg:#ff9600'
+                format = '[ $indicator ]($style)'
+     unknown_indicator = ''
+         zsh_indicator = ''
+        bash_indicator = ''
+  powershell_indicator = ''
+         cmd_indicator = ''
+          nu_indicator = 'ﬓ'
+       xonsh_indicator = ''
+        fish_indicator = ''
+         ion_indicator = ''
+      elvish_indicator = '﯑'
+
+
+[hostname]
+              disabled = false
+                 style = 'fg:#000000 bg:#ff9600'
+                format = '[$ssh_symbol]($style)[$hostname]($style)[ ]($style)'
+              ssh_only = false
+               trim_at = ''
+  
+  
+[directory] #> Control directory output | Order: 2
+              disabled = false
+                 style = 'fg:#ffffff bg:#85827b'
+       read_only_style = '[]($style)'
+       repo_root_style = '[]($style)'
+                format = '[$path]($style)[ ]($style)'
+      repo_root_format = '[]($style)'
+           home_symbol = ' ﰣ'
+     truncation_symbol = ' /'
+             read_only = ' '
+     truncation_length = 2
+      truncate_to_repo = true
+       use_os_path_sep = true
+  
+[git_branch]
+disabled = false
+style = 'fg:#ffffff bg:#000000'
+format = '[$symbol $branch]($style)'
+symbol = ''
+always_show_remote = false
+only_attached = false
+truncation_length = 9223372036854775807
+truncation_symbol = ''
+ignore_branches = []
+
+
+[status]
+              disabled = false
+                 style = 'fg:#000000 bg:#ffffff'
+                format = '[ $symbol$success_symbol $hex_status ]($style)'
+                symbol = '[](fg:#ff0000 bg:#ffffff)'
+        success_symbol = '[﫟](fg:#00ff00 bg:#ffffff)'
+ not_executable_symbol = '[](fg:#ffe600 bg:#ffffff)'
+      not_found_symbol = '[](fg:#757575 bg:#ffffff)'
+         sigint_symbol = '[ﭠ](fg:#3d74ff bg:#ffffff)'
+         signal_symbol = '[ﴞ](bg:#ffffff)'
+ recognize_signal_code = true
+            map_symbol = true
+            pipestatus = false
+
+
+[cmd_duration]
+              disabled = false
+                 style = 'fg:#000000 bg:#85827b'
+                format = '[  ]($style)[$duration]($style)[ ]($style)'
+              min_time = 0
+     show_milliseconds = false
+    show_notifications = false
+    min_time_to_notify = 5000
+  
+  
+[time] #> Control directory output | Order: 2
+              disabled = false
+                 style = 'fg:#000000 bg:#ff9600'
+                format = '[  $time ]($style)'
+              use_12hr = false
+           time_format = '%T'
+       utc_time_offset = 'local'
+            time_range = '-'
+  
+  
+[memory_usage]
+              disabled = false
+                 style = 'fg:#662050 bg:#85827b'
+                format = '[$symbol $ram_pct ]($style)'
+             threshold = -1
+                symbol = ""
+  
+  
+  #> SECTION: Battery
+[battery]
+              disabled = false
+                format = '[$symbol $percentage]($style bg:#ffffff)'
+  
+[[battery.display]]
+             threshold = 10
+                 style = 'fg:#f86600'
+       charging_symbol = ''
+    discharging_symbol = ''
+  
+[[battery.display]]
+             threshold = 25
+                 style = 'fg:#ee8200'
+       charging_symbol = ''
+    discharging_symbol = ''
+  
+[[battery.display]]
+             threshold = 50
+                 style = 'fg:#cdb200'
+       charging_symbol = ''
+    discharging_symbol = ''
+  
+[[battery.display]]
+             threshold = 75
+                 style = 'fg:#98db00'
+       charging_symbol = ''
+    discharging_symbol = ''
+  
+[[battery.display]]
+             threshold = 100
+                 style = 'fg:#6fed00'
+       charging_symbol = ''
+    discharging_symbol = ''

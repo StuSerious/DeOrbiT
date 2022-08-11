@@ -14,7 +14,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 #> RC - ENV
 export EDITOR='code'
 export TERMINAL='kitty'
-
+export GCM_CREDENTIAL_STORE='cache'
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship/cache
 

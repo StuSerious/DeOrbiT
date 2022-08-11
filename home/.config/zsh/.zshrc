@@ -6,14 +6,15 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
-
+#>>> XDG - ENV
 export ZSH="$XDG_DATA_HOME"/oh-my-zsh
 export HISTFILE="$XDG_STATE_HOME"/bash/history
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
-#> RC - Custom ENV
+#> RC - ENV
 export EDITOR='code'
-export TERMINAL='alacritty'
+export TERMINAL='kitty'
+
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export STARSHIP_CACHE=~/.config/starship/cache
 
@@ -32,18 +33,22 @@ source $ZSH/oh-my-zsh.sh
 
 #> SECTION: Aliases
 alias zrl="omz reload"
-#> CMD - Quicks
+#>>> CMD - Quicks
+alias x="exit"
 alias c="clear"
 alias ls="lsd"
-#> CMD - System
+#>>> CMD - System
 alias dnfi="sudo dnf install -y"
 alias dnfu="sudo dnf update -y && sudo dnf upgrade -y"
 alias dnfs="sudo dnf search"
-#> ALS - Configs
+#>>> ALS - Configs
 alias zfg="code ~/.config/zsh/.zshrc"
 alias sfg="code ~/.config/starship/starship.toml"
+alias kfg="code ~/.config/kitty/kitty.conf"
 alias afg="code ~/.config/alacritty/alacritty.yml"
 alias lfg="code ~/.config/lsd/config.yaml"
 
 #> RC - Eval
 eval "$(starship init zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

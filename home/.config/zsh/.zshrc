@@ -8,6 +8,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 #>>> XDG - ENV
 export ZSH="$XDG_DATA_HOME"/oh-my-zsh
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export HISTFILE="$XDG_STATE_HOME"/bash/history
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
@@ -20,8 +21,6 @@ export STARSHIP_CACHE=~/.config/starship/cache
 
 #> SECTION: OMZ
 ZSH_CUSTOM="$HOME/.config/zsh/custom"
-#>>> OMZ - Theme
-ZSH_THEME="robbyrussell"
 #>>> OMZ - Update
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 1
@@ -32,15 +31,18 @@ plugins=(aliases alias-finder alias-tips command-not-found debian git vscode zsh
 source $ZSH/oh-my-zsh.sh
 
 #> SECTION: Aliases
+#>>> ALS - Utils
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"  
 alias zrl="omz reload"
 #>>> CMD - Quicks
 alias x="exit"
 alias c="clear"
 alias ls="lsd"
-#>>> CMD - System
-alias dnfi="sudo dnf install -y"
-alias dnfu="sudo dnf update -y && sudo dnf upgrade -y"
-alias dnfs="sudo dnf search"
+#>>> CMD - nala
+alias apt="nala"
+alias ni="sudo nala install --update"
+alias nu="sudo nala upgrade"
+alias ns="sudo nala search"
 #>>> ALS - Configs
 alias zfg="code ~/.config/zsh/.zshrc"
 alias sfg="code ~/.config/starship/starship.toml"
@@ -50,5 +52,4 @@ alias lfg="code ~/.config/lsd/config.yaml"
 
 #> RC - Eval
 eval "$(starship init zsh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -1,39 +1,37 @@
 #> RC - $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 #> RC - XDG Spec
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
-#>>> XDG - ENV
-export ZSH="$XDG_DATA_HOME"/oh-my-zsh
+#> XDG - Generic
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
-export HISTFILE="$XDG_STATE_HOME"/bash/history
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+#> XDG - Shell
+export ZDOTDIR="$HOME"/.config/zsh
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME"/starship/starship.toml
+export STARSHIP_CACHE="$XDG_CONFIG_HOME"/starship/cache
+#> XDG - Rust
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 #> RC - ENV
 export EDITOR='code'
-export TERMINAL='kitty'
+export TERMINAL='alacritty'
 export GCM_CREDENTIAL_STORE='cache'
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export STARSHIP_CACHE=~/.config/starship/cache
 
-#> SECTION: OMZ
-ZSH_CUSTOM="$HOME/.config/zsh/custom"
-#>>> OMZ - Update
-zstyle ':omz:update' mode auto
-zstyle ':omz:update' frequency 1
-#>>> OMZ - Plugins
-plugins=(aliases alias-finder alias-tips command-not-found debian git vscode zsh-autosuggestions zsh-syntax-highlighting)
-
-#> RC - Sources
-source $ZSH/oh-my-zsh.sh
+#> Zinit
+ZINIT_HOME="$XDG_DATA_HOME"/zinit/zinit.git
+source "${ZINIT_HOME}/zinit.zsh"
+#>>> Zinit - Plugins
+zinit load zdharma-continuum/history-search-multi-word
+zinit light zsh-users/zsh-syntax-highlighting
 
 #> SECTION: Aliases
 #>>> ALS - Utils
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"  
-alias zrl="omz reload"
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 #>>> CMD - Quicks
 alias x="exit"
 alias c="clear"

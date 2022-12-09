@@ -25,12 +25,9 @@ export GCM_CREDENTIAL_STORE='cache'
 #> FZF
 export FZF_DEFAULT_OPTS='--preview-window=right:80%:wrap --height 40% --layout reverse --border'
 
-#> Zinit
-ZINIT_HOME="$XDG_DATA_HOME"/zinit/zinit.git
-source "${ZINIT_HOME}/zinit.zsh"
-#>>> Zinit - Plugins
-zinit load zdharma-continuum/history-search-multi-word
-zinit light zsh-users/zsh-syntax-highlighting
+#> Antidote
+source /home/linuxbrew/.linuxbrew/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
 #> SECTION: Aliases
 #>>> ALS - Utils
@@ -54,4 +51,3 @@ alias lfg="code ~/.config/lsd/config.yaml"
 #> RC - Eval
 eval "$(starship init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-d

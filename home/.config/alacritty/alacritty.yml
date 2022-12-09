@@ -4,7 +4,6 @@
 env:
   TERM: alacritty
 
-
 #> SECTION: Config Config
 live_config_reload: true
 
@@ -18,7 +17,7 @@ window:
     y: 6
   decorations: None
   opacity: 0.9
-  startup_mode: maximized
+  startup_mode: fullscreen
   dynamic_title: true
 scrolling:
   history: 10000
